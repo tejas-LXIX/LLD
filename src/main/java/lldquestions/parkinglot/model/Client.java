@@ -2,7 +2,6 @@ package lldquestions.parkinglot.model;
 
 import lldquestions.parkinglot.model.gate.EntranceGate;
 import lldquestions.parkinglot.model.gate.EntranceGateImpl;
-import lldquestions.parkinglot.model.parkingslot.ParkingSlot;
 import lldquestions.parkinglot.model.vehicle.Vehicle;
 import lldquestions.parkinglot.model.vehicle.VehicleType;
 
