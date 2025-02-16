@@ -1,4 +1,4 @@
-package lldquestions.parkinglot.model;
+package lldquestions.parkinglot;
 
 import lldquestions.parkinglot.model.parkingslot.ParkingSlot;
 

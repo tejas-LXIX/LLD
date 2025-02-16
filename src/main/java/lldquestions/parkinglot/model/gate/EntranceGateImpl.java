@@ -1,6 +1,6 @@
 package lldquestions.parkinglot.model.gate;
 
-import lldquestions.parkinglot.model.Ticket;
+import lldquestions.parkinglot.Ticket;
 import lldquestions.parkinglot.model.parkingslot.ParkingSlot;
 import lldquestions.parkinglot.model.parkingslotmanager.ParkingSlotManager;
 import lldquestions.parkinglot.model.parkingslotmanager.ParkingSlotManagerFactory;
