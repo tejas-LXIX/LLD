@@ -15,7 +15,7 @@ import java.util.Map;
 public class ParkingSlotManagerFactory {
     private static ParkingSlotManagerFactory parkingSlotManagerFactory;
 
-    private static final Map<VehicleType, ParkingSlotManager> managers = new HashMap<>();
+    private final Map<VehicleType, ParkingSlotManager> managers = new HashMap<>();
 
     public static ParkingSlotManagerFactory getInstance() {
         if (parkingSlotManagerFactory == null) {
@@ -42,7 +42,7 @@ public class ParkingSlotManagerFactory {
         managers.put(VehicleType.FOUR_WHEELER, new FourWheelerParkingSlotManager(fourWheelerParkingSlotList, new NearestToEntranceGateParkingStrategy(fourWheelerParkingSlotList)));
     }
 
-    public ParkingSlotManager getParkingSlotManager(Vehicle vehicle) {
-        return managers.get(vehicle.getType());
+    public ParkingSlotManager getParkingSlotManager(VehicleType vehicleType) {
+        return managers.get(vehicleType);
     }
 }

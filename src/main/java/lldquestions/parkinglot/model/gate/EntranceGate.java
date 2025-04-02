@@ -10,13 +10,13 @@ public abstract class EntranceGate {
 
     protected abstract void leaveParkingSlot(ParkingSlot parkingSlot);
 
-    protected abstract Ticket generateTicket(ParkingSlot parkingSlot);
+    protected abstract Ticket generateTicket(Vehicle vehicle, ParkingSlot parkingSlot);
 
     protected abstract ParkingSlot findParkingSlotForParkedVehicle(Vehicle vehicle);
 
     public final Ticket parkVehicleAndGetTicket(Vehicle vehicle) {
         ParkingSlot parkingSlot = bookParkingSlot(vehicle);
-        return generateTicket(parkingSlot);
+        return generateTicket(vehicle, parkingSlot);
     }
 
     public final void leave(Vehicle vehicle) {

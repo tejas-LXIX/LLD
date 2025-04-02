@@ -51,5 +51,9 @@ public abstract class ParkingSlotManager {
         return occupiedParkingSlots.stream().filter(parkingSlot -> parkingSlot.getVehicle().getNumber().equals(vehicle.getNumber())).findFirst().get();
     }
 
+    public ParkingSlot findParkingSlotWithId(int id) {
+        return occupiedParkingSlots.stream().filter(parkingSlot -> parkingSlot.getId() == id).findFirst().get();
+    }
+
 
 }

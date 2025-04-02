@@ -18,24 +18,24 @@ public class EntranceGateImpl extends EntranceGate {
 
     @Override
     public ParkingSlot bookParkingSlot(Vehicle vehicle) {
-        ParkingSlotManager parkingSlotManager = parkingSlotManagerFactory.getParkingSlotManager(vehicle);
+        ParkingSlotManager parkingSlotManager = parkingSlotManagerFactory.getParkingSlotManager(vehicle.getType());
         return parkingSlotManager.parkVehicle(vehicle);
     }
 
     @Override
     protected void leaveParkingSlot(ParkingSlot parkingSlot) {
-        ParkingSlotManager parkingSlotManager = parkingSlotManagerFactory.getParkingSlotManager(parkingSlot.getVehicle());
+        ParkingSlotManager parkingSlotManager = parkingSlotManagerFactory.getParkingSlotManager(parkingSlot.getVehicle().getType());
         parkingSlotManager.removeVehicle(parkingSlot);
     }
 
     @Override
-    public Ticket generateTicket(ParkingSlot parkingSlot) {
-        return new Ticket(new Date(), parkingSlot);
+    public Ticket generateTicket(Vehicle vehicle, ParkingSlot parkingSlot) {
+        return new Ticket(new Date(), vehicle.getNumber(), vehicle.getType(), parkingSlot.getId());
     }
 
     @Override
     protected ParkingSlot findParkingSlotForParkedVehicle(Vehicle vehicle) {
-        ParkingSlotManager parkingSlotManager = parkingSlotManagerFactory.getParkingSlotManager(vehicle);
+        ParkingSlotManager parkingSlotManager = parkingSlotManagerFactory.getParkingSlotManager(vehicle.getType());
         return parkingSlotManager.findParkingSlotForParkedVehicle(vehicle);
     }
 }
