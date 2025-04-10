@@ -1,5 +1,6 @@
 package creationaldesignpatterns.singleton.doublelocking;
 
+//best way as it reduces overhead and is thread safe.
 public class DBConnection {
     private static DBConnection connObject;
 
