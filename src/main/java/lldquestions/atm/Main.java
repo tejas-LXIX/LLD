@@ -10,6 +10,7 @@ public class Main {
         ATM atm = ATM.getInstance();
         User user = initialize();
         Card card = user.getCard();
+
         atm.getAtmState().insertCard(atm, card);
         atm.getAtmState().authenticate(atm, card, "6453");
         atm.getAtmState().selectOperation(atm, OperationType.WITHDRAWAL);
@@ -29,6 +30,16 @@ public class Main {
         atm.getAtmState().authenticate(atm, card, "0000");
         atm.getAtmState().selectOperation(atm, OperationType.CHECK_BALANCE);
         atm.getAtmState().checkBalance(atm, card);
+
+        atm.getAtmState().insertCard(atm, card);
+        atm.getAtmState().authenticate(atm, card, "6453");
+        atm.getAtmState().selectOperation(atm, OperationType.CHECK_BALANCE);
+        atm.getAtmState().checkBalance(atm, card);
+
+        atm.getAtmState().insertCard(atm, card);
+        atm.getAtmState().authenticate(atm, card, "6453");
+        atm.getAtmState().selectOperation(atm, OperationType.WITHDRAWAL);
+        atm.getAtmState().withdraw(atm, card, 205);
 
         atm.getAtmState().insertCard(atm, card);
         atm.getAtmState().authenticate(atm, card, "6453");
